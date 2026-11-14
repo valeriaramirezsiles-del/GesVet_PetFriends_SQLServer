@@ -1,0 +1,422 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Servicios veterinarios en Alajuelita: consulta general, vacunas, grooming, profilaxis dental, castración y urgencias.">
+    <link rel="icon" href="/gesvet-icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/estilos.css">
+    <link rel="stylesheet" href="/gesvet.css">
+    <title>Servicios Veterinarios | PetFriends Alajuelita</title>
+</head>
+
+<body>
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+        <div class="topbar-contenido">
+            <div class="topbar-item">
+                <span class="icono-inline">
+                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </span>
+                <span data-i18n="topTelefono"> 8888-8888</span>
+            </div>
+            <div class="topbar-item">
+                <span class="icono-inline">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </span>
+                <span data-i18n="topHorario"> Lun–Sáb · 8:00 a. m. – 6:00 p. m.</span>
+            </div>
+            <div class="topbar-item">
+                <span class="icono-inline">
+                    <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </span>
+                <span data-i18n="topUbicacion"> Alajuelita, Alajuelita, San José, Costa Rica</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado-principal">
+        <div class="barra-navegacion">
+            <a class="marca" href="/" aria-label="Ir al inicio">
+                <span class="marca-icono"><img src="/logo-petfriends.png" alt="PetFriends" class="marca-perrito-logo"></span>
+                <span>
+                    <strong data-i18n="marcaNombre">PetFriends | Alajuelita</strong>
+                    <small data-i18n="marcaSubtitulo">Salud y bienestar animal</small>
+                </span>
+            </a>
+
+            <button class="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false">
+                ☰
+            </button>
+
+            <nav class="menu-principal">
+                <a href="/" data-i18n="menuInicio">Inicio</a>
+                <a href="/servicios" data-i18n="menuServicios">Servicios</a>
+                <a href="/registro" data-i18n="menuRegistro">Registrar mascota</a>
+                <a href="/citas" data-i18n="menuCitas">Agendar cita</a>
+                <a href="/contacto" data-i18n="menuContacto">Contacto</a>
+
+                <div class="selector-idioma">
+                    <select id="selectorIdioma" aria-label="Seleccionar idioma">
+                        <option value="es">ES</option>
+                        <option value="en">EN</option>
+                    </select>
+                </div>
+
+                <a class="gesvet-acceso" href="/login">Acceso del personal</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="contenedor">
+
+            <!-- CABECERA DE SERVICIOS -->
+            <section class="cabecera-pagina revelar">
+                <span class="mini" data-i18n="serviciosMini">🏥 Especialidades Veterinarias · Sede Alajuelita</span>
+                <h1 data-i18n="serviciosTitulo">Nuestros Servicios Médicos y Quirúrgicos</h1>
+                <p data-i18n="serviciosIntro">
+                    Atención veterinaria integral con equipo multidisciplinario, tarifas claras en colones y quirófano propio en Alajuelita. Haz clic en cualquier tarjeta para ver detalles clínicos y recomendaciones.
+                </p>
+            </section>
+
+            <!-- BARRA DE GARANTÍAS CLÍNICAS -->
+            <div class="servicios-garantias-bar revelar">
+                <div class="garantia-pill">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Precios Transparentes sin costos ocultos</span>
+                </div>
+                <div class="garantia-pill">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Quirófano Estéril con Anestesia Inhalatoria</span>
+                </div>
+                <div class="garantia-pill">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Expediente Clínico Digital Centralizado</span>
+                </div>
+            </div>
+
+            <!-- CUADRÍCULA DE SERVICIOS MODERNA -->
+            <section class="seccion limpia revelar" style="padding-top: 10px;">
+                <div class="servicios-grid-moderno">
+
+                    <!-- 1. CONSULTA INTEGRAL -->
+                    <article class="tarjeta-servicio-pro servicio-click"
+                             tabindex="0"
+                             data-servicio="consulta"
+                             data-imagen="/consulta.png?v=2"
+                             data-icono="/estetoscopio1.png">
+                        <div class="tarjeta-img-wrap">
+                            <img src="/consulta.png?v=2" alt="Consulta Veterinaria Integral" data-i18n-alt="servicioConsultaAlt">
+                            <span class="tarjeta-cat-badge">Medicina General</span>
+                            <span class="tarjeta-precio-badge">₡15,000 · 30 min</span>
+                        </div>
+                        <div class="tarjeta-body-pro">
+                            <div>
+                                <div class="tarjeta-servicio-header">
+                                    <span class="icono-badge">
+                                        <svg viewBox="0 0 24 24"><path d="M4.5 3v5a3.5 3.5 0 0 0 7 0V3M8 11.5v3.5a4 4 0 0 0 4 4h1a4 4 0 0 0 4-4v-1.5M17 13.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
+                                    </span>
+                                    <h3 data-i18n="servicioConsultaTitulo">Consulta Veterinaria Integral</h3>
+                                </div>
+                                <div class="tarjeta-tiempo-pill">⏱️ Duración estimada: 30 minutos</div>
+                                <p data-i18n="servicioConsultaCorto">
+                                    Valoración exhaustiva de ojos, oídos, piel, corazón y peso con asesoría nutricional y preventiva.
+                                </p>
+                                <ul class="tarjeta-pro-bullets">
+                                    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Examen físico completo y diagnóstico</li>
+                                    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Prescripción médica y expediente digital</li>
+                                </ul>
+                            </div>
+                            <div class="tarjeta-pro-acciones">
+                                <button class="btn-detalles-pro boton-ver" type="button" data-i18n="verDetalles">Ver detalles</button>
+                                <a href="/citas?servicio=1" class="btn-agendar-pro">Agendar cita</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 2. VACUNACIÓN -->
+                    <article class="tarjeta-servicio-pro servicio-click"
+                             tabindex="0"
+                             data-servicio="vacunacion"
+                             data-imagen="/vacunacion.png?v=2"
+                             data-icono="/inyeccion1.png">
+                        <div class="tarjeta-img-wrap">
+                            <img src="/vacunacion.png?v=2" alt="Vacunación y Desparasitación" data-i18n-alt="servicioVacunacionAlt">
+                            <span class="tarjeta-cat-badge">Inmunización</span>
+                            <span class="tarjeta-precio-badge">₡18,000 · 20 min</span>
+                        </div>
+                        <div class="tarjeta-body-pro">
+                            <div>
+                                <div class="tarjeta-servicio-header">
+                                    <span class="icono-badge">
+                                        <svg viewBox="0 0 24 24"><path d="m18 2 4 4-2 2-4-4 2-2zM15 5l-7 7M9 11l4 4M5 19l4-4M3 21l3-3M14 8l2 2"/></svg>
+                                    </span>
+                                    <h3 data-i18n="servicioVacunacionTitulo">Vacunación y Desparasitación</h3>
+                                </div>
+                                <div class="tarjeta-tiempo-pill">⏱️ Duración estimada: 20 minutos</div>
+                                <p data-i18n="servicioVacunacionCorto">
+                                    Esquemas oficiales de vacunación y control antiparasitario para cachorros y adultos con carné oficial.
+                                </p>
+                                <ul class="tarjeta-pro-bullets">
+                                    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Múltiple, Rabia, Giardia y Leucemia</li>
+                                    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Control de parásitos internos y pulgas/garrapatas</li>
+                                </ul>
+                            </div>
+                            <div class="tarjeta-pro-acciones">
+                                <button class="btn-detalles-pro boton-ver" type="button" data-i18n="verDetalles">Ver detalles</button>
+                                <a href="/citas?servicio=2" class="btn-agendar-pro">Agendar cita</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 3. GROOMING Y SPA -->
+                    <article class="tarjeta-servicio-pro servicio-click"
+                             tabindex="0"
+                             data-servicio="grooming"
+                             data-imagen="/peluqueria.png?v=3"
+                             data-icono="/bano1.png">
+                        <div class="tarjeta-img-wrap">
+                            <img src="/peluqueria.png?v=3" alt="Grooming Profesional y Spa" data-i18n-alt="servicioGroomingAlt">
+                            <span class="tarjeta-cat-badge">Higiene & Estética</span>
+                            <span class="tarjeta-precio-badge">₡16,000 · 60 min</span>
+                        </div>
+                        <div class="tarjeta-body-pro">
+                            <div>
+                                <div class="tarjeta-servicio-header">
+                                    <span class="icono-badge">
+                                        <svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20M12 12l3.2-3.2"/></svg>
+                                    </span>
+                                    <h3 data-i18n="servicioGroomingTitulo">Grooming Profesional y Spa</h3>
+                                </div>
+                                <div class="tarjeta-tiempo-pill">⏱️ Duración estimada: 60 minutos</div>
+                                <p data-i18n="servicioGroomingCorto">
+                                    Baño con shampoo terapéutico, corte de raza estilizado, limpieza de oídos, corte de uñas y secado relajante.
+                                </p>
+                                <ul class="tarjeta-pro-bullets">
+                                    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Cuidado dermatológico sin estrés</li>
+                                    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Estilismo canino y felino profesional</li>
+                                </ul>
+                            </div>
+                            <div class="tarjeta-pro-acciones">
+                                <button class="btn-detalles-pro boton-ver" type="button" data-i18n="verDetalles">Ver detalles</button>
+                                <a href="/citas?servicio=3" class="btn-agendar-pro">Agendar cita</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 4. SALUD DENTAL -->
+                    <article class="tarjeta-servicio-pro servicio-click"
+                             tabindex="0"
+                             data-servicio="dental"
+                             data-imagen="/dental.png?v=3"
+                             data-icono="/diente1.png">
+                        <div class="tarjeta-img-wrap">
+                            <img src="/dental.png?v=3" alt="Salud y Limpieza Dental" data-i18n-alt="servicioDentalAlt">
+                            <span class="tarjeta-cat-badge">Odontología</span>
+                            <span class="tarjeta-precio-badge">₡22,000 · 45 min</span>
+                        </div>
+                        <div class="tarjeta-body-pro">
+                            <div>
+                                <div class="tarjeta-servicio-header">
+                                    <span class="icono-badge">
+                                        <svg viewBox="0 0 24 24"><path d="M7 3C4.2 3 2 5.2 2 8c0 3.5 1.5 6.5 2.5 10 .5 2 1.5 3 2.5 3 1.5 0 2-2 3-4 1 2 1.5 4 3 4 1 0 2-1 2.5-3 1-3.5 2.5-6.5 2.5-10 0-2.8-2.2-5-5-5-1.5 0-2.5.8-3.5 2C8.5 3.8 7.5 3 7 3z"/></svg>
+                                    </span>
+                                    <h3 data-i18n="servicioDentalTitulo">Salud y Limpieza Dental</h3>
+                                </div>
+                                <div class="tarjeta-tiempo-pill">⏱️ Duración estimada: 45 minutos</div>
+                                <p data-i18n="servicioDentalCorto">
+                                    Profilaxis ultrasónica dental, remoción de sarro y pulido dental para prevenir gingivitis y mal aliento.
+                                </p>
+                                <ul class="tarjeta-pro-bullets">
+                                    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Equipo de ultrasonido indoloro</li>
+                                    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Prevención de infecciones bucales</li>
+                                </ul>
+                            </div>
+                            <div class="tarjeta-pro-acciones">
+                                <button class="btn-detalles-pro boton-ver" type="button" data-i18n="verDetalles">Ver detalles</button>
+                                <a href="/citas?servicio=4" class="btn-agendar-pro">Agendar cita</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 5. CASTRACIÓN Y CIRUGÍA -->
+                    <article class="tarjeta-servicio-pro servicio-click"
+                             tabindex="0"
+                             data-servicio="castracion"
+                             data-imagen="/castracion.png?v=3"
+                             data-icono="/estetoscopio1.png"
+                             style="border-color: #D4A373;">
+                        <div class="tarjeta-img-wrap">
+                            <img src="/castracion.png?v=3" alt="Castración y Cirugía Preventiva" data-i18n-alt="servicioCastracionAlt">
+                            <span class="tarjeta-cat-badge" style="background: #92400E; color: #FFFBEB;">Quirófano Estéril</span>
+                            <span class="tarjeta-precio-badge" style="background:#FFFBEB; border-color:#FDE68A; color:#92400E;">₡35,000 · 90 min</span>
+                        </div>
+                        <div class="tarjeta-body-pro">
+                            <div>
+                                <div class="tarjeta-servicio-header">
+                                    <span class="icono-badge icono-dorado">
+                                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM12 8v8M8 12h8"/></svg>
+                                    </span>
+                                    <h3 data-i18n="servicioCastracionTitulo">Castración y Esterilización</h3>
+                                </div>
+                                <div class="tarjeta-tiempo-pill">⏱️ Duración estimada: 90 minutos</div>
+                                <p data-i18n="servicioCastracionCorto">
+                                    Procedimiento quirúrgico seguro con anestesia inhalatoria, monitoreo de signos vitales y control postoperatorio guiado.
+                                </p>
+                                <ul class="tarjeta-pro-bullets">
+                                    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Anestesia segura y monitoreo constante</li>
+                                    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Medicación y chequeo postoperatorio</li>
+                                </ul>
+                            </div>
+                            <div class="tarjeta-pro-acciones">
+                                <button class="btn-detalles-pro boton-ver" type="button" data-i18n="verDetalles">Ver detalles</button>
+                                <a href="/citas?servicio=5" class="btn-agendar-pro" style="background:#0B2545;">Agendar cita</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 6. URGENCIAS -->
+                    <article class="tarjeta-servicio-pro servicio-click"
+                             tabindex="0"
+                             data-servicio="emergencias"
+                             data-imagen="/emergencias.png?v=2"
+                             data-icono="/emergencia1.png">
+                        <div class="tarjeta-img-wrap">
+                            <img src="/emergencias.png?v=2" alt="Urgencias y Cuidados Críticos" data-i18n-alt="servicioEmergenciasAlt">
+                            <span class="tarjeta-cat-badge" style="background: #DC2626;">Atención Prioritaria</span>
+                            <span class="tarjeta-precio-badge">₡25,000 · 45 min</span>
+                        </div>
+                        <div class="tarjeta-body-pro">
+                            <div>
+                                <div class="tarjeta-servicio-header">
+                                    <span class="icono-badge">
+                                        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                                    </span>
+                                    <h3 data-i18n="servicioEmergenciasTitulo">Urgencias y Cuidados Críticos</h3>
+                                </div>
+                                <div class="tarjeta-tiempo-pill">⏱️ Atención inmediata</div>
+                                <p data-i18n="servicioEmergenciasCorto">
+                                    Protocolo de estabilización rápida para traumatismos, intoxicaciones, heridas y dificultades respiratorias.
+                                </p>
+                                <ul class="tarjeta-pro-bullets">
+                                    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Oxigenoterapia, suero y analgesia</li>
+                                    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Prioridad médica inmediata</li>
+                                </ul>
+                            </div>
+                            <div class="tarjeta-pro-acciones">
+                                <button class="btn-detalles-pro boton-ver" type="button" data-i18n="verDetalles">Ver detalles</button>
+                                <a href="/contacto" class="btn-agendar-pro" style="background: #DC2626;">Llamar urgente</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- BANNER DE CONTACTO INMEDIATO -->
+            <section class="cta revelar" style="margin-top: 60px;">
+                <div>
+                    <span class="etiqueta" style="background: rgba(212,163,115,0.25); color: #FFFDF8; border-color: rgba(212,163,115,0.5);">
+                        📍 Alajuelita, San José · Especialistas en Cuidado Animal
+                    </span>
+                    <h2>¿Deseas una cotización o consulta sobre algún procedimiento?</h2>
+                    <p>Contáctanos hoy mismo por WhatsApp o agenda tu espacio en línea en pocos segundos.</p>
+                </div>
+                <div style="display:flex; gap:14px; flex-wrap:wrap;">
+                    <a class="boton boton-claro" href="/citas">Agendar cita online</a>
+                    <a class="boton" style="background: transparent; color: #FDFBF7; border: 1.5px solid #D4A373;" href="/contacto">Consultar por WhatsApp</a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- MODAL DE INFORMACIÓN DEL SERVICIO -->
+    <div id="modalServicio" class="modal" aria-hidden="true">
+        <div class="modal-contenido" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+            <button id="cerrarModal" class="cerrar-modal" type="button" aria-label="Cerrar">×</button>
+            <img id="modalImagen" class="modal-imagen" src="" alt="Imagen del servicio">
+            <div style="padding: 28px 24px;">
+                <span class="mini" data-i18n="modalInfoServicio">Detalle Clínico · PetFriends Alajuelita</span>
+                <div class="modal-titulo-servicio" style="display:flex; align-items:center; gap:12px; margin: 12px 0 16px;">
+                    <img id="modalIcono" class="modal-icono" src="" alt="Icono del servicio" style="width:36px; height:36px; object-fit:contain;">
+                    <h2 id="modalTitulo" style="margin:0; font-size:24px; color:#0B2545;">Servicio</h2>
+                </div>
+                <p id="modalTexto" style="color:#475569; font-size:15.5px; line-height:1.6; margin-bottom: 24px;">
+                    Información detallada del servicio veterinario.
+                </p>
+                <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                    <a class="boton boton-principal" href="/citas" data-i18n="modalSolicitarCita">
+                        📅 Agendar cita para este servicio
+                    </a>
+                    <button class="boton boton-secundario" type="button" onclick="document.getElementById('cerrarModal').click();">
+                        Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+                    <img src="/logo-petfriends.png" alt="PetFriends Logo" style="width:48px; height:48px; border-radius:12px;">
+                    <div>
+                        <h3 style="margin:0; font-size:20px;" data-i18n="footerTitulo">Veterinaria PetFriends</h3>
+                        <small style="color:#D4A373; font-weight:700;">Centro Médico Veterinario · Alajuelita</small>
+                    </div>
+                </div>
+                <p data-i18n="footerDescripcion">
+                    Comprometidos con la salud, longevidad y felicidad de los animales de compañía mediante medicina ética, tecnología diagnóstica y atención empática.
+                </p>
+            </div>
+
+            <div>
+                <h3 data-i18n="footerExplorar">Explorar</h3>
+                <p><a href="/" data-i18n="menuInicio">Inicio</a></p>
+                <p><a href="/servicios" data-i18n="menuServicios">Servicios</a></p>
+                <p><a href="/registro" data-i18n="menuRegistro">Registrar mascota</a></p>
+                <p><a href="/citas" data-i18n="menuCitas">Agendar cita</a></p>
+                <p><a href="/contacto" data-i18n="menuContacto">Contacto</a></p>
+                <p><a href="/login">Acceso del personal</a></p>
+            </div>
+
+            <div>
+                <h3 data-i18n="footerContacto">Contacto</h3>
+                <p>
+                    <span class="icono-inline"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+                    <span data-i18n="footerTelefono"> 8888-8888</span>
+                </p>
+                <p>
+                    <span class="icono-inline"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+                    <span data-i18n="footerCorreo"> contacto@petfriends.cr</span>
+                </p>
+                <p>
+                    <span class="icono-inline"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                    <span data-i18n="footerUbicacion"> Alajuelita, Alajuelita, San José, Costa Rica</span>
+                </p>
+            </div>
+        </div>
+
+        <div style="border-top: 1px solid rgba(229, 220, 190, 0.2); margin-top: 36px; padding-top: 20px; text-align: center; color: #94A3B8; font-size: 13px;">
+            <p data-i18n="footerCopy">© 2026 Clínica Veterinaria PetFriends · Alajuelita, Costa Rica.</p>
+        </div>
+    </footer>
+
+    <a class="whatsapp-flotante" href="https://wa.me/50688888888" target="_blank" rel="noopener" aria-label="WhatsApp">
+        💬
+    </a>
+
+    <button class="arriba" id="btnArriba" type="button" aria-label="Subir">
+        ↑
+    </button>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

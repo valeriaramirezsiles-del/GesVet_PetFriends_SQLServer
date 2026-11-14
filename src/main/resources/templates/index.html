@@ -1,0 +1,623 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veterinaria PetFriends Alajuelita: medicina avanzada, cirugías, vacunación, grooming y bienestar animal con calidez y tecnología.">
+    <link rel="icon" href="/gesvet-icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/estilos.css">
+    <link rel="stylesheet" href="/gesvet.css">
+    <title>Veterinaria PetFriends | Alajuelita, San José</title>
+</head>
+
+<body>
+
+    <!-- TOPBAR INFORMATIVO CON ICONOS UNIFICADOS -->
+    <div class="topbar">
+        <div class="topbar-contenido">
+            <div class="topbar-item">
+                <span class="icono-inline">
+                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </span>
+                <span data-i18n="topTelefono"> 8888-8888</span>
+            </div>
+            <div class="topbar-item">
+                <span class="icono-inline">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </span>
+                <span data-i18n="topHorario"> Lun–Sáb · 8:00 a. m. – 6:00 p. m.</span>
+            </div>
+            <div class="topbar-item">
+                <span class="icono-inline">
+                    <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </span>
+                <span data-i18n="topUbicacion"> Alajuelita, Alajuelita, San José, Costa Rica</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ENCABEZADO Y NAVEGACIÓN PRINCIPAL -->
+    <header class="encabezado-principal">
+        <div class="barra-navegacion">
+            <a class="marca" href="/" aria-label="Ir al inicio">
+                <span class="marca-icono">
+                    <img src="/logo-petfriends.png" alt="PetFriends Logo" class="marca-perrito-logo">
+                </span>
+                <span>
+                    <strong data-i18n="marcaNombre">PetFriends | Alajuelita</strong>
+                    <small data-i18n="marcaSubtitulo">Salud y bienestar animal</small>
+                </span>
+            </a>
+
+            <button class="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false">
+                ☰
+            </button>
+
+            <nav class="menu-principal">
+                <a href="/" data-i18n="menuInicio">Inicio</a>
+                <a href="/servicios" data-i18n="menuServicios">Servicios</a>
+                <a href="/registro" data-i18n="menuRegistro">Registrar mascota</a>
+                <a href="/citas" data-i18n="menuCitas">Agendar cita</a>
+                <a href="/contacto" data-i18n="menuContacto">Contacto</a>
+
+                <div class="selector-idioma">
+                    <select id="selectorIdioma" aria-label="Seleccionar idioma">
+                        <option value="es">ES</option>
+                        <option value="en">EN</option>
+                    </select>
+                </div>
+
+                <a class="gesvet-acceso" href="/login">Acceso del personal</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-sin-margen">
+
+        <!-- =========================================================
+             HERO SPLIT ASIMÉTRICO - TOTALMENTE DISTINTIVO Y MODERNO
+             ========================================================= -->
+        <section class="hero-split-seccion">
+            <div class="hero-split-contenedor">
+                
+                <!-- Columna Izquierda: Mensaje de Valor y CTA -->
+                <div class="hero-col-texto revelar">
+                    <div class="hero-badge-pill">
+                        <span class="badge-dot"></span>
+                        <span data-i18n="heroEtiqueta">Clínica Veterinaria en Alajuelita · Atención Hoy</span>
+                    </div>
+
+                    <h1 class="hero-title-modern">
+                        <span data-i18n="heroTitulo1">Compromiso y salud</span><br>
+                        <span data-i18n="heroTitulo2" style="color: #0B2545;">para tus consentidos</span>
+                    </h1>
+
+                    <p class="hero-lead-modern" data-i18n="heroTexto">
+                        Medicina veterinaria de vanguardia, quirófano estéril para castración, medicina preventiva y estética canina en Alajuelita. Acompañamos a tu mascota con amor y excelencia clínica.
+                    </p>
+
+                    <div class="hero-checklist">
+                        <div class="hero-check-item">
+                            <span class="hero-check-icon">✓</span>
+                            <span>Médicos veterinarios colegiados y especialistas</span>
+                        </div>
+                        <div class="hero-check-item">
+                            <span class="hero-check-icon">✓</span>
+                            <span>Quirófano propio con anestesia inhalatoria y monitoreo</span>
+                        </div>
+                        <div class="hero-check-item">
+                            <span class="hero-check-icon">✓</span>
+                            <span>Atención de urgencias y laboratorio clínico integral</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-actions-modern">
+                        <a class="boton-modern-primary" href="/citas" data-i18n="heroCita">
+                            <span>Agendar cita online</span>
+                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a class="boton-modern-secondary" href="/servicios" data-i18n="heroServicios">
+                            <span>Ver los 6 servicios</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-social-proof">
+                        <div class="proof-stars">★★★★★</div>
+                        <div class="proof-text">
+                            <strong>4.9 / 5.0</strong> · Más de 1,200 familias de Alajuelita confían en nosotros
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Tarjeta Visual con Badges Flotantes -->
+                <div class="hero-visual-card revelar">
+                    <div class="floating-badge-top">
+                        <span class="icono-badge icono-sm icono-dorado">
+                            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </span>
+                        <div>
+                            <strong style="font-size: 13px; color: #0B2545; display:block;">99% Satisfacción</strong>
+                            <small style="color: #64748B; font-size: 11.5px;">Atención cálida sin estrés</small>
+                        </div>
+                    </div>
+
+                    <div class="hero-img-wrapper">
+                        <img src="/veterinaria.png?v=3" alt="Veterinaria PetFriends en Alajuelita">
+                    </div>
+
+                    <div class="floating-badge-bottom">
+                        <span class="icono-badge icono-sm icono-azul">
+                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM12 8v8M8 12h8"/></svg>
+                        </span>
+                        <div>
+                            <strong style="font-size: 13.5px; color: #FDFBF7; display:block;">Quirófano y Urgencias</strong>
+                            <small style="color: #D4A373; font-size: 12px;">50m Norte del Parque de Alajuelita</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================================
+             FRANJA DE MÉTRICAS CLÍNICAS CON ICONOS UNIFICADOS
+             ========================================================= -->
+        <div class="contenedor">
+            <section class="franja-metricas-bento revelar">
+                <div class="metrica-card">
+                    <span class="icono-badge">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+                    </span>
+                    <div class="metrica-info">
+                        <strong>15+ Años</strong>
+                        <small>Vocación y Excelencia</small>
+                    </div>
+                </div>
+
+                <div class="metrica-card">
+                    <span class="icono-badge">
+                        <svg viewBox="0 0 24 24"><path d="M3 21h18M3 7v14M21 7v14M6 3h12a2 2 0 0 1 2 2v2H4V5a2 2 0 0 1 2-2zM9 11h2v2H9v-2zm4 0h2v2h-2v-2zm-4 4h2v2H9v-2zm4 0h2v2h-2v-2z"/></svg>
+                    </span>
+                    <div class="metrica-info">
+                        <strong data-i18n="confServiciosNumero">6</strong>
+                        <small data-i18n="confServicios">Especialidades Médicas</small>
+                    </div>
+                </div>
+
+                <div class="metrica-card">
+                    <span class="icono-badge">
+                        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </span>
+                    <div class="metrica-info">
+                        <strong>3,500+</strong>
+                        <small>Mascotas Atendidas</small>
+                    </div>
+                </div>
+
+                <div class="metrica-card">
+                    <span class="icono-badge">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </span>
+                    <div class="metrica-info">
+                        <strong data-i18n="confAtencionTitulo">Alajuelita</strong>
+                        <small data-i18n="confAtencionTexto">Parque Central, San José</small>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- =========================================================
+             SHOWCASE BENTO DE LOS 6 SERVICIOS (ICONOS UNIFICADOS)
+             ========================================================= -->
+        <div class="contenedor">
+            <section class="seccion limpia revelar" style="padding-top: 60px;">
+                <div class="titulo-seccion">
+                    <span class="mini" data-i18n="inicioMiniServicios">Especialidades Veterinarias</span>
+                    <h2 data-i18n="inicioTituloServicios">Nuestros servicios para cada etapa de tu mascota</h2>
+                    <p data-i18n="inicioTextoServicios">
+                        Atención médica estructurada, equipo quirúrgico de última generación y protocolos de cuidado compasivo.
+                    </p>
+                </div>
+
+                <div class="servicios-bento-grid">
+                    
+                    <!-- 1. Consulta Integral -->
+                    <article class="tarjeta-bento">
+                        <div>
+                            <div class="bento-top-row">
+                                <span class="icono-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M4.5 3v5a3.5 3.5 0 0 0 7 0V3M8 11.5v3.5a4 4 0 0 0 4 4h1a4 4 0 0 0 4-4v-1.5M17 13.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
+                                </span>
+                                <span class="bento-tag">Más Solicitada</span>
+                            </div>
+                            <span class="bento-precio-pill">₡15,000 · 30 min</span>
+                            <h3 data-i18n="servicioConsultaTitulo">Consulta Veterinaria Integral</h3>
+                            <p data-i18n="servicioConsultaResumen">
+                                Examen clínico riguroso de ojos, oídos, piel, corazón y peso con asesoría nutricional y preventiva.
+                            </p>
+                            <ul class="bento-bullets">
+                                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Diagnóstico clínico completo</li>
+                                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Expediente digital inmediato</li>
+                            </ul>
+                        </div>
+                        <a href="/citas?servicio=1" class="bento-btn">
+                            <span>Agendar consulta</span>
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </article>
+
+                    <!-- 2. Vacunación -->
+                    <article class="tarjeta-bento">
+                        <div>
+                            <div class="bento-top-row">
+                                <span class="icono-badge">
+                                    <svg viewBox="0 0 24 24"><path d="m18 2 4 4-2 2-4-4 2-2zM15 5l-7 7M9 11l4 4M5 19l4-4M3 21l3-3M14 8l2 2"/></svg>
+                                </span>
+                                <span class="bento-tag">Prevención</span>
+                            </div>
+                            <span class="bento-precio-pill">₡18,000 · 20 min</span>
+                            <h3 data-i18n="servicioVacunacionTitulo">Vacunación y Desparasitación</h3>
+                            <p data-i18n="servicioVacunacionResumen">
+                                Esquemas oficiales de inmunización y control antiparasitario con carné médico certificado.
+                            </p>
+                            <ul class="bento-bullets">
+                                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Múltiple, Rabia, Leucemia</li>
+                                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Desparasitante interno y externo</li>
+                            </ul>
+                        </div>
+                        <a href="/citas?servicio=2" class="bento-btn">
+                            <span>Agendar vacunas</span>
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </article>
+
+                    <!-- 3. Grooming Profesional -->
+                    <article class="tarjeta-bento">
+                        <div>
+                            <div class="bento-top-row">
+                                <span class="icono-badge">
+                                    <svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20M12 12l3.2-3.2"/></svg>
+                                </span>
+                                <span class="bento-tag">Higiene & Spa</span>
+                            </div>
+                            <span class="bento-precio-pill">₡16,000 · 60 min</span>
+                            <h3 data-i18n="servicioGroomingTitulo">Grooming Profesional y Spa</h3>
+                            <p data-i18n="servicioGroomingResumen">
+                                Baño dermatológico, corte por raza, corte de uñas, limpieza de oídos y secado sin estrés.
+                            </p>
+                            <ul class="bento-bullets">
+                                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Shampoos hipoalergénicos</li>
+                                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Estilismo canino y felino</li>
+                            </ul>
+                        </div>
+                        <a href="/citas?servicio=3" class="bento-btn">
+                            <span>Reservar grooming</span>
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </article>
+
+                    <!-- 4. Salud Dental -->
+                    <article class="tarjeta-bento">
+                        <div>
+                            <div class="bento-top-row">
+                                <span class="icono-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M7 3C4.2 3 2 5.2 2 8c0 3.5 1.5 6.5 2.5 10 .5 2 1.5 3 2.5 3 1.5 0 2-2 3-4 1 2 1.5 4 3 4 1 0 2-1 2.5-3 1-3.5 2.5-6.5 2.5-10 0-2.8-2.2-5-5-5-1.5 0-2.5.8-3.5 2C8.5 3.8 7.5 3 7 3z"/></svg>
+                                </span>
+                                <span class="bento-tag">Odontología</span>
+                            </div>
+                            <span class="bento-precio-pill">₡22,000 · 45 min</span>
+                            <h3 data-i18n="servicioDentalTitulo">Salud y Limpieza Dental</h3>
+                            <p data-i18n="servicioDentalResumen">
+                                Profilaxis ultrasónica, eliminación de sarro y bacterias para encías sanas y aliento fresco.
+                            </p>
+                            <ul class="bento-bullets">
+                                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Ultrasonido de precisión</li>
+                                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Prevención periodontal</li>
+                            </ul>
+                        </div>
+                        <a href="/citas?servicio=4" class="bento-btn">
+                            <span>Agendar limpieza</span>
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </article>
+
+                    <!-- 5. Castración y Cirugía -->
+                    <article class="tarjeta-bento" style="border-color: #D4A373;">
+                        <div>
+                            <div class="bento-top-row">
+                                <span class="icono-badge icono-dorado">
+                                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM12 8v8M8 12h8"/></svg>
+                                </span>
+                                <span class="bento-tag" style="background:#FFFBEB; color:#92400E; border:1px solid #FDE68A;">Quirófano</span>
+                            </div>
+                            <span class="bento-precio-pill">₡35,000 · 90 min</span>
+                            <h3 data-i18n="servicioCastracionTitulo">Castración y Esterilización</h3>
+                            <p data-i18n="servicioCastracionResumen">
+                                Procedimiento quirúrgico seguro para caninos y felinos con anestesia monitoreada y analgesia avanzada.
+                            </p>
+                            <ul class="bento-bullets">
+                                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Monitoreo multiparamétrico</li>
+                                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Control postoperatorio incluido</li>
+                            </ul>
+                        </div>
+                        <a href="/citas?servicio=5" class="bento-btn" style="background:#0B2545; color:#FDFBF7 !important;">
+                            <span>Reservar cirugía</span>
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </article>
+
+                    <!-- 6. Urgencias -->
+                    <article class="tarjeta-bento">
+                        <div>
+                            <div class="bento-top-row">
+                                <span class="icono-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                                </span>
+                                <span class="bento-tag">Prioritario</span>
+                            </div>
+                            <span class="bento-precio-pill">₡25,000 · 45 min</span>
+                            <h3 data-i18n="servicioEmergenciasTitulo">Urgencias y Cuidados Críticos</h3>
+                            <p data-i18n="servicioEmergenciasResumen">
+                                Estabilización inmediata ante traumatismos, intoxicaciones, dificultades respiratorias o dolor agudo.
+                            </p>
+                            <ul class="bento-bullets">
+                                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Oxigenoterapia y fluidoterapia</li>
+                                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Atención médica prioritaria</li>
+                            </ul>
+                        </div>
+                        <a href="/contacto" class="bento-btn">
+                            <span>Línea de urgencias</span>
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </article>
+
+                </div>
+
+                <div class="centrado" style="margin-top: 40px;">
+                    <a class="boton boton-principal" href="/servicios" data-i18n="inicioTodosServicios">
+                        Ver catálogo completo de especialidades
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <!-- =========================================================
+             PILARES DE EXCELENCIA CLÍNICA (ICONOS UNIFICADOS)
+             ========================================================= -->
+        <div class="contenedor">
+            <section class="seccion limpia por-que revelar">
+                <div class="titulo-seccion">
+                    <span class="mini" data-i18n="porqueMini">Diferencial PetFriends</span>
+                    <h2 data-i18n="porqueTitulo">Un estándar médico pensado para su bienestar</h2>
+                    <p>Por qué las familias de Alajuelita y San José eligen nuestro centro para sus consentidos.</p>
+                </div>
+
+                <div class="pilares-grid">
+                    <div class="pilar-card">
+                        <span class="icono-badge">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+                        </span>
+                        <h3 data-i18n="beneficioTratoTitulo">Médicos Certificados</h3>
+                        <p data-i18n="beneficioTratoTexto">
+                            Profesionales incorporados al Colegio de Médicos Veterinarios con formación continua en cirugía y medicina felina/canina.
+                        </p>
+                    </div>
+
+                    <div class="pilar-card">
+                        <span class="icono-badge">
+                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM12 8v8M8 12h8"/></svg>
+                        </span>
+                        <h3 data-i18n="beneficioPrevencionTitulo">Quirófano Estéril</h3>
+                        <p data-i18n="beneficioPrevencionTexto">
+                            Instalaciones con esterilización quirúrgica de grado hospitalario, anestesia inhalatoria y monitoreo multiparamétrico.
+                        </p>
+                    </div>
+
+                    <div class="pilar-card">
+                        <span class="icono-badge">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </span>
+                        <h3 data-i18n="beneficioSeguimientoTitulo">Protocolos Sin Estrés</h3>
+                        <p data-i18n="beneficioSeguimientoTexto">
+                            Espacios adaptados y manejo respetuoso para que la visita al veterinario sea una experiencia positiva y tranquila.
+                        </p>
+                    </div>
+
+                    <div class="pilar-card">
+                        <span class="icono-badge">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>
+                        </span>
+                        <h3 data-i18n="beneficioContactoTitulo">Expediente Digital</h3>
+                        <p data-i18n="beneficioContactoTexto">
+                            Historial completo de citas, diagnósticos, recetas y recordatorios preventivos accesibles desde tu teléfono.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- =========================================================
+             RUTA DE ATENCIÓN EN 4 PASOS
+             ========================================================= -->
+        <div class="contenedor">
+            <section class="seccion limpia revelar">
+                <div class="titulo-seccion">
+                    <span class="mini">Paso a paso</span>
+                    <h2>¿Cómo funciona tu atención en PetFriends?</h2>
+                    <p>Proceso 100% transparente para que tú y tu mascota disfruten de una atención impecable.</p>
+                </div>
+
+                <div class="timeline-pasos-grid">
+                    <div class="paso-card">
+                        <div class="paso-numero">01</div>
+                        <span class="icono-badge icono-sm" style="margin-bottom:12px;">
+                            <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+                        </span>
+                        <h3>Registro en Línea</h3>
+                        <p>Registra el perfil y expediente de tu mascota en menos de 1 minuto desde nuestra plataforma.</p>
+                    </div>
+
+                    <div class="paso-card">
+                        <div class="paso-numero">02</div>
+                        <span class="icono-badge icono-sm" style="margin-bottom:12px;">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <h3>Elige Servicio y Horario</h3>
+                        <p>Selecciona la especialidad requerida y el turno que mejor se adapte a tu día a día.</p>
+                    </div>
+
+                    <div class="paso-card">
+                        <div class="paso-numero">03</div>
+                        <span class="icono-badge icono-sm" style="margin-bottom:12px;">
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </span>
+                        <h3>Cita en Alajuelita</h3>
+                        <p>Llegas a nuestra sede central frente a parqueo seguro, con atención puntual y cálida.</p>
+                    </div>
+
+                    <div class="paso-card">
+                        <div class="paso-numero">04</div>
+                        <span class="icono-badge icono-sm" style="margin-bottom:12px;">
+                            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </span>
+                        <h3>Seguimiento y Control</h3>
+                        <p>Recibes el resumen clínico digital y recordatorios automáticos para sus próximos refuerzos.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- =========================================================
+             TESTIMONIOS REALES DE ALAJUELITA
+             ========================================================= -->
+        <div class="contenedor">
+            <section class="seccion limpia revelar">
+                <div class="titulo-seccion">
+                    <span class="mini" data-i18n="testimonioMini">Comunidad PetFriends</span>
+                    <h2 data-i18n="testimonioTitulo">Lo que valoran las familias de Alajuelita</h2>
+                </div>
+
+                <div class="testimonios">
+                    <blockquote>
+                        <div class="estrellas">★★★★★</div>
+                        <p data-i18n="testimonio1">
+                            “Excelente atención para mi perrita en Alajuelita. El Dr. Carlos fue sumamente profesional, paciente y me explicó a detalle cada paso del chequeo general.”
+                        </p>
+                        <cite data-i18n="testimonioAutor1">
+                            — Valeria S. · Dueña de Thor (Border Collie) · San Felipe, Alajuelita
+                        </cite>
+                    </blockquote>
+
+                    <blockquote>
+                        <div class="estrellas">★★★★★</div>
+                        <p data-i18n="testimonio2">
+                            “La castración de mi gatito y el servicio de Grooming fueron impecables. El quirófano está súper limpio y el seguimiento postoperatorio fue excelente.”
+                        </p>
+                        <cite data-i18n="testimonioAutor2">
+                            — Alejandro M. · Dueña de Simba (Bengalí) · Concepción, Alajuelita
+                        </cite>
+                    </blockquote>
+
+                    <blockquote>
+                        <div class="estrellas">★★★★★</div>
+                        <p>
+                            “Llegué de urgencia con mi perrita intoxicada y el equipo actuó con una rapidez y calidez increíbles. Hoy está sana y jugando como siempre.”
+                        </p>
+                        <cite>
+                            — Mariela Q. · Dueña de Luna (Poodle) · Centro de Alajuelita
+                        </cite>
+                    </blockquote>
+                </div>
+            </section>
+        </div>
+
+        <!-- =========================================================
+             BANNER DE ATENCIÓN DE URGENCIAS Y CONTACTO DIRECTO
+             ========================================================= -->
+        <div class="contenedor">
+            <section class="cta revelar">
+                <div>
+                    <span class="etiqueta" style="background: rgba(212,163,115,0.25); color: #FFFDF8; border-color: rgba(212,163,115,0.5);">
+                        📍 Alajuelita, San José · Atención Garantizada
+                    </span>
+                    <h2>¿Tu mascota necesita atención o una cirugía preventiva?</h2>
+                    <p>
+                        Agenda hoy tu cita médica o acércate a nuestras instalaciones en Alajuelita. Nuestro equipo médico está listo para acompañarte.
+                    </p>
+                </div>
+                <div style="display:flex; gap:14px; flex-wrap:wrap;">
+                    <a class="boton boton-claro" href="/citas">Agendar cita ahora</a>
+                    <a class="boton" style="background: transparent; color: #FDFBF7; border: 1.5px solid #D4A373;" href="/contacto">Cómo llegar</a>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- FOOTER ELEGANTE EN AZUL MARINO Y CREMA -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+                    <img src="/logo-petfriends.png" alt="PetFriends Logo" style="width:48px; height:48px; border-radius:12px;">
+                    <div>
+                        <h3 style="margin:0; font-size:20px;" data-i18n="footerTitulo">Veterinaria PetFriends</h3>
+                        <small style="color:#D4A373; font-weight:700;">Centro Médico Veterinario · Alajuelita</small>
+                    </div>
+                </div>
+                <p data-i18n="footerDescripcion">
+                    Comprometidos con la salud, longevidad y felicidad de los animales de compañía mediante medicina ética, tecnología diagnóstica y atención empática.
+                </p>
+            </div>
+
+            <div>
+                <h3 data-i18n="footerExplorar">Explorar</h3>
+                <p><a href="/" data-i18n="menuInicio">Inicio</a></p>
+                <p><a href="/servicios" data-i18n="menuServicios">Servicios</a></p>
+                <p><a href="/registro" data-i18n="menuRegistro">Registrar mascota</a></p>
+                <p><a href="/citas" data-i18n="menuCitas">Agendar cita</a></p>
+                <p><a href="/contacto" data-i18n="menuContacto">Contacto</a></p>
+                <p><a href="/login">Acceso del personal</a></p>
+            </div>
+
+            <div>
+                <h3 data-i18n="footerContacto">Contacto</h3>
+                <p>
+                    <span class="icono-inline"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+                    <span data-i18n="footerTelefono"> 8888-8888</span>
+                </p>
+                <p>
+                    <span class="icono-inline"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+                    <span data-i18n="footerCorreo"> contacto@petfriends.cr</span>
+                </p>
+                <p>
+                    <span class="icono-inline"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                    <span data-i18n="footerUbicacion"> Alajuelita, Alajuelita, San José, Costa Rica</span>
+                </p>
+                <p>
+                    <span class="icono-inline"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+                    <span>Lun - Sáb: 8:00 AM - 6:00 PM</span>
+                </p>
+            </div>
+        </div>
+
+        <div style="border-top: 1px solid rgba(229, 220, 190, 0.2); margin-top: 36px; padding-top: 20px; text-align: center; color: #94A3B8; font-size: 13px;">
+            <p data-i18n="footerCopy">© 2026 Clínica Veterinaria PetFriends · Alajuelita, Costa Rica. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- BOTONES FLOTANTES -->
+    <a class="whatsapp-flotante" href="https://wa.me/50688888888" target="_blank" rel="noopener" aria-label="WhatsApp">
+        💬
+    </a>
+
+    <button class="arriba" id="btnArriba" type="button" aria-label="Subir">
+        ↑
+    </button>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,4 @@
+GESVET: CORRECCIÓN DE IMÁGENES
+Las imágenes de servicios fueron recompuestas sin texto dentro de las fotos. Los títulos se muestran en HTML para evitar cortes.
+Se aplicó object-fit: contain en tarjetas y modales, para que la imagen quede visible completa.
+Además se reemplazaron los iconos AVIF restantes por variantes menta del propio proyecto.

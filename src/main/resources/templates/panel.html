@@ -1,0 +1,383 @@
+﻿<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel de Control | GesVet - PetFriends</title>
+  <link rel="icon" th:href="@{/gesvet-icon.svg}" href="/gesvet-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" th:href="@{/gesvet.css}" href="/gesvet.css">
+</head>
+<body class="gesvet-dashboard-modern">
+
+  <!-- Encabezado superior -->
+  <header class="gesvet-top-nav">
+    <div class="nav-brand">
+      <a th:href="@{/}" href="/" class="brand-link">
+        <span class="brand-paw"><img src="/logo-petfriends.png" alt="PetFriends" style="width:32px;height:32px;"></span>
+        <div>
+          <strong>GesVet</strong>
+          <small>Clínica Veterinaria PetFriends · Alajuelita</small>
+        </div>
+      </a>
+    </div>
+
+    <div class="nav-user-area">
+      <div class="user-chip">
+        <span class="user-avatar" th:text="${admin ? '👑' : '🩺'}">🩺</span>
+        <div class="user-meta">
+          <span class="user-name" th:text="${usuario}">Usuario</span>
+          <span class="user-role-badge" th:classappend="${admin ? 'badge-admin' : 'badge-vet'}" th:text="${rol}">Rol</span>
+        </div>
+      </div>
+      <a th:href="@{/}" href="/" class="btn-ghost" title="Ver sitio público">🌐 Sitio Web</a>
+      <form th:action="@{/logout}" method="post" style="margin:0;">
+        <button type="submit" class="btn-logout">Cerrar sesión</button>
+      </form>
+    </div>
+  </header>
+
+  <!-- Contenedor Principal -->
+  <main class="dashboard-container">
+
+    <!-- Bienvenida y accesos rápidos -->
+    <div class="dashboard-hero">
+      <div>
+        <span class="hero-kicker">PORTAL CLÍNICO Y ADMINISTRATIVO</span>
+        <h1>Hola, <span th:text="${usuario}">Usuario</span> 👋</h1>
+        <p class="hero-sub" th:if="${admin}">Gestión integral de pacientes, citas médicas, propietarios y registro de atenciones veterinarias.</p>
+        <p class="hero-sub" th:unless="${admin}">Agenda clínica de pacientes, valoración médica y registro de atenciones veterinarias.</p>
+      </div>
+      <div class="quick-links">
+        <a th:href="@{/citas}" href="/citas" class="quick-btn"><span>📅</span> Nueva Cita</a>
+        <a th:href="@{/registro}" href="/registro" class="quick-btn"><span>🐕</span> Registrar Mascota</a>
+        <a th:href="@{/servicios}" href="/servicios" class="quick-btn"><span>📋</span> Catálogo Servicios</a>
+      </div>
+    </div>
+
+    <!-- Tarjetas de Estadísticas (KPIs) -->
+    <section class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-icon kpi-green">🐕</div>
+        <div class="kpi-data">
+          <span class="kpi-label">Pacientes Registrados</span>
+          <strong id="kpiMascotas" class="kpi-value">-</strong>
+        </div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-icon kpi-teal">👥</div>
+        <div class="kpi-data">
+          <span class="kpi-label">Propietarios</span>
+          <strong id="kpiPropietarios" class="kpi-value">-</strong>
+        </div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-icon kpi-blue">📅</div>
+        <div class="kpi-data">
+          <span class="kpi-label">Citas Totales</span>
+          <strong id="kpiCitas" class="kpi-value">-</strong>
+        </div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-icon kpi-amber">⏳</div>
+        <div class="kpi-data">
+          <span class="kpi-label">Citas Pendientes</span>
+          <strong id="kpiPendientes" class="kpi-value">-</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Gestión de Citas y Pacientes -->
+    <section class="table-section">
+      <div class="section-header">
+        <div>
+          <h2>Agenda y Citas Veterinarias</h2>
+          <p>Supervisa, confirma citas y registra la atención médica de cada paciente.</p>
+        </div>
+        <div class="filter-group">
+          <button class="filter-pill active" data-filter="TODAS">Todas</button>
+          <button class="filter-pill" data-filter="Pendiente">Pendientes</button>
+          <button class="filter-pill" data-filter="Confirmada">Confirmadas</button>
+          <button class="filter-pill" data-filter="Atendida">Atendidas</button>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="data-table" id="tablaCitas">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Fecha y Hora</th>
+              <th>Paciente</th>
+              <th>Propietario</th>
+              <th>Servicio</th>
+              <th>Veterinario</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="citasBody">
+            <tr>
+              <td colspan="8" class="text-center py-4">Cargando agenda de citas...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal de Atención Médica Veterinaria -->
+  <div id="modalAtencion" class="modal-overlay" style="display:none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <span class="kicker">EXPEDIENTE MÉDICO</span>
+          <h3 id="modalTitulo">Atención Clínica de Mascota</h3>
+        </div>
+        <button type="button" class="btn-close" onclick="cerrarModalAtencion()">✕</button>
+      </div>
+
+      <form id="formAtencion" onsubmit="guardarAtencionMedica(event)">
+        <input type="hidden" id="atencionIdCita">
+        <input type="hidden" id="atencionIdMascota">
+
+        <div class="modal-body">
+          <div class="patient-summary" id="modalResumenPaciente">
+            <!-- Info del paciente inyectada por JS -->
+          </div>
+
+          <div class="form-group">
+            <label for="atencionDiagnostico"><strong>Diagnóstico Médico *</strong></label>
+            <textarea id="atencionDiagnostico" rows="3" required placeholder="Describe la valoración y condición médica encontrada..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="atencionTratamiento"><strong>Tratamiento y Medicación Prescrita</strong></label>
+            <textarea id="atencionTratamiento" rows="3" placeholder="Medicamentos, dosis, cuidados o indicaciones clínicas..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="atencionObservaciones"><strong>Observaciones adicionales</strong></label>
+            <input type="text" id="atencionObservaciones" placeholder="Ej. Control en 15 días, dieta especial...">
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-cancel" onclick="cerrarModalAtencion()">Cerrar</button>
+          <button type="submit" class="btn-primary" id="btnGuardarAtencion">💾 Guardar Ficha Médica</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script interactivo del panel -->
+  <script>
+    let citasGlobal = [];
+    let filtroActual = 'TODAS';
+
+    document.addEventListener("DOMContentLoaded", () => {
+      cargarResumen();
+      cargarCitas();
+      configurarFiltros();
+    });
+
+    async function cargarResumen() {
+      try {
+        const res = await fetch('/api/panel/resumen');
+        if (res.ok) {
+          const data = await res.json();
+          document.getElementById('kpiMascotas').textContent = data.totalMascotas;
+          document.getElementById('kpiPropietarios').textContent = data.totalPropietarios;
+          document.getElementById('kpiCitas').textContent = data.totalCitas;
+          document.getElementById('kpiPendientes').textContent = data.citasPendientes;
+        }
+      } catch (e) {
+        console.error("Error al cargar estadísticas", e);
+      }
+    }
+
+    async function cargarCitas() {
+      try {
+        const res = await fetch('/api/panel/citas');
+        if (res.ok) {
+          citasGlobal = await res.json();
+          renderizarCitas();
+        }
+      } catch (e) {
+        console.error("Error al cargar citas", e);
+        document.getElementById('citasBody').innerHTML = '<tr><td colspan="8" class="text-center py-4 error-text">No se pudieron cargar las citas.</td></tr>';
+      }
+    }
+
+    function configurarFiltros() {
+      document.querySelectorAll('.filter-pill').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          filtroActual = btn.getAttribute('data-filter');
+          renderizarCitas();
+        });
+      });
+    }
+
+    function renderizarCitas() {
+      const tbody = document.getElementById('citasBody');
+      const filtradas = filtroActual === 'TODAS'
+        ? citasGlobal
+        : citasGlobal.filter(c => c.estado === filtroActual);
+
+      if (filtradas.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="8" class="text-center py-4">No hay citas registradas en esta categoría.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = filtradas.map(c => {
+        const badgeClass =
+          c.estado === 'Pendiente' ? 'badge-pending' :
+          c.estado === 'Confirmada' ? 'badge-confirmed' :
+          c.estado === 'Atendida' ? 'badge-done' : 'badge-canceled';
+
+        const btnAtender = `
+          <button class="action-btn btn-atender" onclick="abrirModalAtencion(${c.idCita}, ${c.idMascota}, '${escapeHtml(c.nombreMascota)}', '${escapeHtml(c.nombrePropietario)}', '${escapeHtml(c.nombreServicio)}', ${c.atendida})">
+            ${c.atendida ? '🩺 Ver Ficha' : '🩺 Atender'}
+          </button>
+        `;
+
+        const btnConfirmar = c.estado === 'Pendiente' ? `
+          <button class="action-btn btn-confirm" onclick="cambiarEstadoCita(${c.idCita}, 'Confirmada')" title="Confirmar cita">✓ Confirmar</button>
+        ` : '';
+
+        const btnCancelar = (c.estado !== 'Atendida' && c.estado !== 'Cancelada') ? `
+          <button class="action-btn btn-cancel-sm" onclick="cambiarEstadoCita(${c.idCita}, 'Cancelada')" title="Cancelar cita">✕</button>
+        ` : '';
+
+        return `
+          <tr>
+            <td><strong>#${c.idCita}</strong></td>
+            <td>
+              <div class="cell-date">📅 ${c.fecha}</div>
+              <div class="cell-time">⏰ ${c.hora.substring(0, 5)}</div>
+            </td>
+            <td>
+              <div class="cell-pet"><strong>${escapeHtml(c.nombreMascota)}</strong></div>
+              <div class="cell-sub">${escapeHtml(c.tipoMascota)} (${escapeHtml(c.razaMascota || 'Sin raza')})</div>
+            </td>
+            <td>
+              <div>${escapeHtml(c.nombrePropietario)}</div>
+              <div class="cell-sub">📞 ${escapeHtml(c.telefonoPropietario)}</div>
+            </td>
+            <td><span class="service-tag">${escapeHtml(c.nombreServicio)}</span></td>
+            <td><span class="vet-name">${escapeHtml(c.nombreVeterinario)}</span></td>
+            <td><span class="status-badge ${badgeClass}">${c.estado}</span></td>
+            <td class="action-cell">
+              ${btnConfirmar}
+              ${btnAtender}
+              ${btnCancelar}
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    async function cambiarEstadoCita(idCita, nuevoEstado) {
+      if (!confirm(`¿Deseas cambiar el estado de la cita #${idCita} a "${nuevoEstado}"?`)) return;
+
+      try {
+        const res = await fetch(`/api/panel/citas/${idCita}/estado`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ estado: nuevoEstado })
+        });
+        if (res.ok) {
+          cargarCitas();
+          cargarResumen();
+        } else {
+          alert('No se pudo actualizar el estado.');
+        }
+      } catch (e) {
+        console.error(e);
+        alert('Error al comunicarse con el servidor.');
+      }
+    }
+
+    async function abrirModalAtencion(idCita, idMascota, nombreMascota, nombrePropietario, nombreServicio, atendida) {
+      document.getElementById('atencionIdCita').value = idCita;
+      document.getElementById('atencionIdMascota').value = idMascota;
+      document.getElementById('modalTitulo').textContent = atendida ? `Ficha de Atención Médica #${idCita}` : `Nueva Atención Clínica - Cita #${idCita}`;
+
+      document.getElementById('modalResumenPaciente').innerHTML = `
+        <div><strong>Paciente:</strong> ${nombreMascota} | <strong>Propietario:</strong> ${nombrePropietario}</div>
+        <div><strong>Servicio asignado:</strong> ${nombreServicio}</div>
+      `;
+
+      // Limpiar campos
+      document.getElementById('atencionDiagnostico').value = '';
+      document.getElementById('atencionTratamiento').value = '';
+      document.getElementById('atencionObservaciones').value = '';
+
+      if (atendida) {
+        try {
+          const res = await fetch(`/api/panel/citas/${idCita}/atencion`);
+          if (res.ok) {
+            const data = await res.json();
+            document.getElementById('atencionDiagnostico').value = data.diagnostico || '';
+            document.getElementById('atencionTratamiento').value = data.tratamiento || '';
+            document.getElementById('atencionObservaciones').value = data.observaciones || '';
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      }
+
+      document.getElementById('modalAtencion').style.display = 'flex';
+    }
+
+    function cerrarModalAtencion() {
+      document.getElementById('modalAtencion').style.display = 'none';
+    }
+
+    async function guardarAtencionMedica(event) {
+      event.preventDefault();
+      const idCita = document.getElementById('atencionIdCita').value;
+      const idMascota = document.getElementById('atencionIdMascota').value;
+      const diagnostico = document.getElementById('atencionDiagnostico').value;
+      const tratamiento = document.getElementById('atencionTratamiento').value;
+      const observaciones = document.getElementById('atencionObservaciones').value;
+
+      try {
+        const res = await fetch(`/api/panel/citas/${idCita}/atencion`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ idMascota, diagnostico, tratamiento, observaciones })
+        });
+        if (res.ok) {
+          alert('¡Ficha de atención médica guardada con éxito!');
+          cerrarModalAtencion();
+          cargarCitas();
+          cargarResumen();
+        } else {
+          const err = await res.json();
+          alert('Error: ' + (err.mensaje || 'No se pudo guardar la atención.'));
+        }
+      } catch (e) {
+        console.error(e);
+        alert('Error al comunicarse con el servidor.');
+      }
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+  </script>
+</body>
+</html>
+

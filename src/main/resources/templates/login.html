@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión | GesVet - PetFriends</title>
+  <link rel="icon" th:href="@{/gesvet-icon.svg}" href="/gesvet-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" th:href="@{/gesvet.css}" href="/gesvet.css">
+</head>
+<body class="gesvet-auth">
+  <main class="gesvet-auth-shell">
+    <section class="gesvet-auth-visual" aria-label="Veterinaria PetFriends">
+      <div class="gesvet-auth-brand"><span class="gesvet-brand-mark">✚</span><span><strong>GesVet</strong><small>Veterinaria PetFriends</small></span></div>
+      <div class="gesvet-auth-photo" role="img" aria-label="Perro y gato de Veterinaria PetFriends"></div>
+      <div class="gesvet-visual-copy"><span class="gesvet-auth-eyebrow">CUIDAMOS A QUIENES MÁS QUIERES</span><h2>Una atención más cercana para cada mascota.</h2><p>Organiza las citas y la información de tus pacientes desde un solo lugar.</p></div>
+      <span class="gesvet-visual-paw" aria-hidden="true"><img src="/logo-petfriends.png" alt="" style="width:170px;height:170px;opacity:0.12;"></span>
+    </section>
+    <section class="gesvet-auth-content">
+      <a class="gesvet-back" th:href="@{/}" href="/">← Volver al inicio</a>
+      <div class="gesvet-login-logo" aria-hidden="true"><img src="/logo-petfriends.png" alt="PetFriends" style="width:38px;height:38px;"></div>
+      <p class="gesvet-kicker">PORTAL DEL PERSONAL</p>
+      <h1>¡Bienvenido a GesVet!</h1>
+      <p class="gesvet-login-description">Ingresa con tu cuenta de administrador o veterinario para continuar.</p>
+      <div class="gesvet-error" role="alert" th:if="${param.error}">Usuario o contraseña incorrectos. Inténtalo de nuevo.</div>
+      <div class="gesvet-ok" role="status" th:if="${param.salida}">Has cerrado sesión correctamente.</div>
+      <form class="gesvet-login-form" th:action="@{/login}" action="/login" method="post">
+        <label for="username">Usuario</label>
+        <input id="username" name="username" autocomplete="username" placeholder="Escribe tu usuario" required autofocus>
+        <label for="password">Contraseña</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Escribe tu contraseña" required>
+        <button type="submit">Iniciar sesión <span aria-hidden="true">→</span></button>
+      </form>
+      
+      <!-- Cuentas rápidas de prueba -->
+      <div style="margin-top: 18px; padding: 14px; background: #FAF5EE; border-radius: 14px; border: 1px solid #E5DCBE; font-size: 12.5px; text-align: left;">
+        <div style="font-weight: 700; color: #0B2545; margin-bottom: 8px;">💡 Cuentas de demostración rápida:</div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <button type="button" onclick="llenarLogin('admin_demo', 'DemoAdmin2026!')" style="background: #FFFFFF; border: 1.5px solid #1E40AF; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 12px; font-weight: 700; color: #1E40AF;">👑 Administrador</button>
+          <button type="button" onclick="llenarLogin('veterinario_demo', 'DemoVet2026!')" style="background: #FFFFFF; border: 1.5px solid #D4A373; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 12px; font-weight: 700; color: #0B2545;">🩺 Veterinario</button>
+        </div>
+      </div>
+
+      <p class="gesvet-footnote">🔒 Acceso exclusivo para personal autorizado.</p>
+    </section>
+  </main>
+
+  <script>
+    function llenarLogin(u, p) {
+      document.getElementById('username').value = u;
+      document.getElementById('password').value = p;
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,275 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacto con Veterinaria PetFriends en Alajuelita, San José. Atención telefónica, WhatsApp, ubicación y formulario de consultas.">
+    <link rel="icon" href="/gesvet-icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/estilos.css">
+    <link rel="stylesheet" href="/gesvet.css">
+    <title>Contacto | Veterinaria PetFriends Alajuelita</title>
+</head>
+
+<body>
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+        <div class="topbar-contenido">
+            <div class="topbar-item">
+                <span class="icono-inline">
+                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </span>
+                <span data-i18n="topTelefono"> 8888-8888</span>
+            </div>
+            <div class="topbar-item">
+                <span class="icono-inline">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </span>
+                <span data-i18n="topHorario"> Lun–Sáb · 8:00 a. m. – 6:00 p. m.</span>
+            </div>
+            <div class="topbar-item">
+                <span class="icono-inline">
+                    <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </span>
+                <span data-i18n="topUbicacion"> Alajuelita, Alajuelita, San José, Costa Rica</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado-principal">
+        <div class="barra-navegacion">
+            <a class="marca" href="/" aria-label="Ir al inicio">
+                <span class="marca-icono"><img src="/logo-petfriends.png" alt="PetFriends" class="marca-perrito-logo"></span>
+                <span>
+                    <strong data-i18n="marcaNombre">PetFriends | Alajuelita</strong>
+                    <small data-i18n="marcaSubtitulo">Salud y bienestar animal</small>
+                </span>
+            </a>
+
+            <button class="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false">
+                ☰
+            </button>
+
+            <nav class="menu-principal">
+                <a href="/" data-i18n="menuInicio">Inicio</a>
+                <a href="/servicios" data-i18n="menuServicios">Servicios</a>
+                <a href="/registro" data-i18n="menuRegistro">Registrar mascota</a>
+                <a href="/citas" data-i18n="menuCitas">Agendar cita</a>
+                <a href="/contacto" data-i18n="menuContacto">Contacto</a>
+
+                <div class="selector-idioma">
+                    <select id="selectorIdioma" aria-label="Seleccionar idioma">
+                        <option value="es">ES</option>
+                        <option value="en">EN</option>
+                    </select>
+                </div>
+
+                <a class="gesvet-acceso" href="/login">Acceso del personal</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="contenedor">
+
+            <!-- CABECERA DE CONTACTO -->
+            <section class="cabecera-pagina revelar">
+                <span class="mini" data-i18n="contactoMini">Contacto directo</span>
+                <h1 data-i18n="contactoTitulo">Estamos cerca de ti y de tu mascota</h1>
+                <p data-i18n="contactoIntro">
+                    Puedes llamarnos, escribirnos por WhatsApp o visitarnos en nuestra sede central de Alajuelita.
+                </p>
+            </section>
+
+            <!-- TARJETAS DE CONTACTO CON ICONOS UNIFICADOS -->
+            <section class="seccion limpia revelar">
+                <div class="contacto-tarjetas">
+                    <article class="contacto-card">
+                        <span class="icono-badge">
+                            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </span>
+                        <div>
+                            <h3 data-i18n="labelTelefono">Teléfono</h3>
+                            <p>8888-8888</p>
+                        </div>
+                    </article>
+
+                    <article class="contacto-card">
+                        <span class="icono-badge">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        </span>
+                        <div>
+                            <h3 data-i18n="labelCorreo">Correo electrónico</h3>
+                            <p>contacto@petfriends.cr</p>
+                        </div>
+                    </article>
+
+                    <article class="contacto-card">
+                        <span class="icono-badge">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </span>
+                        <div>
+                            <h3 data-i18n="contactoHorarioTitulo">Horario</h3>
+                            <p data-i18n="contactoHorarioTexto">Lunes a sábado · 8:00 a. m. – 6:00 p. m.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="centrado" style="margin-top: 32px;">
+                    <a class="boton boton-whatsapp" href="https://wa.me/50688888888" target="_blank" rel="noopener" data-i18n="contactoWhatsapp">
+                        💬 Contactar por WhatsApp
+                    </a>
+                </div>
+            </section>
+
+            <!-- =========================================================
+                 SECCIÓN DEL MAPA CENTRADO Y DE GRAN TAMAÑO
+                 ========================================================= -->
+            <section class="seccion-mapa-centrado revelar">
+                <div class="mapa-cabecera">
+                    <span class="mini" data-i18n="contactoVisitanos">Visítanos</span>
+                    <div class="mapa-titulo-fila">
+                        <span class="icono-badge">
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </span>
+                        <h2 data-i18n="contactoUbicacionTitulo">Nuestra ubicación</h2>
+                    </div>
+                    <p data-i18n="contactoUbicacionTexto" class="mapa-subtitulo">
+                        Alajuelita, Alajuelita, San José, Costa Rica.
+                    </p>
+                </div>
+
+                <!-- MARCO DEL MAPA CENTRADO DE GRAN TAMAÑO -->
+                <div class="mapa-marco-centrado">
+                    <iframe
+                        src="https://www.google.com/maps?q=Alajuelita,%20San%20Jose,%20Costa%20Rica&output=embed"
+                        title="Ubicación de Veterinaria PetFriends en Alajuelita"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="centrado" style="margin-top: 24px;">
+                    <a class="boton boton-secundario"
+                       href="https://www.google.com/maps/search/?api=1&query=Alajuelita+San+Jose+Costa+Rica"
+                       target="_blank"
+                       rel="noopener"
+                       data-i18n="contactoAbrirMaps">
+                        📍 Abrir en Google Maps
+                    </a>
+                </div>
+            </section>
+
+            <!-- FORMULARIO DE CONSULTAS -->
+            <section class="seccion limpia revelar" style="max-width: 800px; margin: 0 auto 60px;">
+                <div class="titulo-seccion">
+                    <span class="mini" data-i18n="contactoConsultaMini">Consulta</span>
+                    <h2 data-i18n="contactoFormularioTitulo">Envíanos un mensaje</h2>
+                    <p>Déjanos tus datos y nos pondremos en contacto contigo a la brevedad.</p>
+                </div>
+
+                <form class="formulario formulario-contacto" id="formContacto">
+                    <div class="campo">
+                        <label for="nombre" data-i18n="labelNombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Digite su nombre" data-i18n-placeholder="phNombre" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefonoContacto" data-i18n="labelTelefono">Teléfono</label>
+                        <input type="tel" id="telefonoContacto" name="telefono" placeholder="8888-8888" data-i18n-placeholder="phTelefono" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="correoContacto" data-i18n="labelCorreo">Correo electrónico</label>
+                        <input type="email" id="correoContacto" name="correo" placeholder="ejemplo@correo.com" data-i18n-placeholder="phCorreo" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="motivo" data-i18n="contactoMotivo">Motivo de la consulta</label>
+                        <select id="motivo" name="motivo" required>
+                            <option value="" disabled selected data-i18n="contactoSeleccione">Seleccione una opción</option>
+                            <option value="consulta">Consulta general</option>
+                            <option value="vacunacion">Vacunación y desparasitación</option>
+                            <option value="grooming">Grooming y estética</option>
+                            <option value="castracion">Castración o cirugía</option>
+                            <option value="dental">Salud dental</option>
+                            <option value="urgencia">Urgencias</option>
+                            <option value="otro">Otro motivo</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="mensaje" data-i18n="contactoMensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escriba aquí los detalles..." required></textarea>
+                    </div>
+
+                    <button class="boton boton-principal" type="submit" data-i18n="contactoEnviar">
+                        Enviar consulta
+                    </button>
+                </form>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+                    <img src="/logo-petfriends.png" alt="PetFriends Logo" style="width:48px; height:48px; border-radius:12px;">
+                    <div>
+                        <h3 style="margin:0; font-size:20px;" data-i18n="footerTitulo">Veterinaria PetFriends</h3>
+                        <small style="color:#D4A373; font-weight:700;">Centro Médico Veterinario · Alajuelita</small>
+                    </div>
+                </div>
+                <p data-i18n="footerDescripcion">
+                    Cuidamos a tu mascota con atención cercana, prevención y bienestar animal.
+                </p>
+            </div>
+
+            <div>
+                <h3 data-i18n="footerExplorar">Explorar</h3>
+                <p><a href="/" data-i18n="menuInicio">Inicio</a></p>
+                <p><a href="/servicios" data-i18n="menuServicios">Servicios</a></p>
+                <p><a href="/registro" data-i18n="menuRegistro">Registrar mascota</a></p>
+                <p><a href="/citas" data-i18n="menuCitas">Agendar cita</a></p>
+                <p><a href="/contacto" data-i18n="menuContacto">Contacto</a></p>
+                <p><a href="/login">Acceso del personal</a></p>
+            </div>
+
+            <div>
+                <h3 data-i18n="footerContacto">Contacto</h3>
+                <p>
+                    <span class="icono-inline"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+                    <span data-i18n="footerTelefono"> 8888-8888</span>
+                </p>
+                <p>
+                    <span class="icono-inline"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+                    <span data-i18n="footerCorreo"> contacto@petfriends.cr</span>
+                </p>
+                <p>
+                    <span class="icono-inline"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                    <span data-i18n="footerUbicacion"> Alajuelita, Alajuelita, San José, Costa Rica</span>
+                </p>
+            </div>
+        </div>
+
+        <div style="border-top: 1px solid rgba(229, 220, 190, 0.2); margin-top: 36px; padding-top: 20px; text-align: center; color: #94A3B8; font-size: 13px;">
+            <p data-i18n="footerCopy">© 2026 Clínica Veterinaria PetFriends · Alajuelita, Costa Rica.</p>
+        </div>
+    </footer>
+
+    <a class="whatsapp-flotante" href="https://wa.me/50688888888" target="_blank" rel="noopener" aria-label="WhatsApp">
+        💬
+    </a>
+
+    <button class="arriba" id="btnArriba" type="button" aria-label="Subir">
+        ↑
+    </button>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

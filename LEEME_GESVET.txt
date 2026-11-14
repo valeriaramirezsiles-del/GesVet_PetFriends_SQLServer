@@ -1,0 +1,41 @@
+GESVET - SISTEMA DE GESTIÓN VETERINARIA
+Veterinaria PetFriends | Proyecto IntelliJ IDEA (Maven, Java 17, Spring Boot, Thymeleaf, SQL Server)
+
+1) Extraer el ZIP. Abrir IntelliJ IDEA > File > Open > seleccionar carpeta GesVet_PetFriends.
+2) Esperar a que IntelliJ cargue Maven y seleccionar JDK 17 (o superior compatible).
+3) Abrir SQL Server, conectar al servidor local, abrir base_datos/01_crear_gesvet_petfriends_SQLServer.sql y ejecutar TODO el script (icono rayo).
+4) La base se llama gesvet_petfriends. En src/main/resources/application.properties:
+   DB_URL apunta a jdbc:SQL Server://127.0.0.1:3306/gesvet_petfriends.
+   Colocar DB_USER y DB_PASSWORD como variables de entorno; para prueba local también puede
+   configurar spring.datasource.username y spring.datasource.password en ese archivo.
+   No compartir contraseñas reales en repositorios.
+5) Ejecutar la clase src/main/java/com/gesvet/petfriends/GesVetApplication.java.
+   También puede usar mvnw.cmd spring-boot:run en Windows.
+6) Abrir http://localhost:8080/login
+
+Cuentas de DEMOSTRACIÓN (solo en memoria, no están en SQL Server):
+Administrador: admin_demo / DemoAdmin2026!
+Veterinario: veterinario_demo / DemoVet2026!
+Cambiar mediante GESVET_ADMIN_USER/GESVET_ADMIN_PASSWORD y GESVET_VET_USER/GESVET_VET_PASSWORD.
+
+Colores: verde agua #138C80, menta #70D7C2, fondo #F3FCFA.
+Identidad: GesVet = sistema; Veterinaria PetFriends = negocio ficticio del Avance 1.
+
+MODULOS PRESENTES: inicio, servicios, contacto, registro de mascotas, citas, login y panel.
+TABLAS CREADAS: propietarios, mascotas, servicios, usuarios, veterinarios, citas,
+atenciones, consultas_contacto.
+
+IMPORTANTE - AÚN PENDIENTE DEL AVANCE 1:
+La tabla de usuarios/veterinarios/atenciones existe, pero todavía no se conectó a
+administración de cuentas, login desde la BD, agenda asignada al veterinario,
+registro de atenciones ni reportes. Las credenciales son temporales para demo.
+El proyecto no ha sido probado en esta sesión con un servidor SQL Server ejecutándose.
+
+
+CONFIGURACION PARA SQL SERVER
+1. Ejecutar base_datos/01_crear_gesvet_petfriends_SQLServer.sql en SQL Server Management Studio (SSMS).
+2. Verificar que SQL Server acepte conexiones TCP/IP en el puerto 1433 o ajustar DB_URL.
+3. Ajustar DB_USER y DB_PASSWORD en las variables de entorno (login SQL Server, no Windows Authentication).
+4. En IntelliJ, abrir esta carpeta como proyecto Maven y ejecutar GesVetApplication.
+5. Los usuarios demo actuales vienen de application.properties, NO de la tabla usuarios.
+6. El servidor de SQL Server debe estar iniciado antes de ejecutar Java.
